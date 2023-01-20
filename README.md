@@ -22,7 +22,6 @@
 
 ## Requirements
 To get along with the challenge you need to have the following:
-- Motivation
 - Python-3
 - MySQL
 - Internet
