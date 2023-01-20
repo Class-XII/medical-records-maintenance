@@ -43,7 +43,7 @@ or else i am afraid this is just too much for you my friend
 
 ### Install Python 3 (preferably 3.10)
 Entire code runs on Python. Install [Python for windows](https://www.python.org/downloads/).
-![Python download](images/download_python.png)
+![Python download](IMAGE/download_python.png)
 After downloading double click and install
 We can check if node is installed on our local machine by opening our device terminal or command prompt.
 
@@ -53,7 +53,8 @@ Python 3.10.7
 ```
 ### Download git repository
 ![Download repository](IMAGE/repository.png)
-- Download ZIP and extract OR
+- Download ZIP and extract 
+  <div>OR<div>
 ### Clone git repository
 Open git Bash.
 Change the current working directory to the location where you want the cloned directory.
