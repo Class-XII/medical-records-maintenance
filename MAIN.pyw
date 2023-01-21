@@ -96,7 +96,6 @@ def bmi_index(bmi):
 
 def close():
     new_window.destroy()
-    main_window.state('normal')
     
 def savedata():
     admn_number=ent1.get()
@@ -586,7 +585,6 @@ def modify():
             return g.get()
     def close2():
             modf.destroy()
-            main_window.state('normal')
     def bt0():
         try:
             btn9.destroy()
