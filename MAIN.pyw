@@ -5,8 +5,9 @@ import mysql.connector
 import datetime
 import csv
 from tkinter.filedialog import asksaveasfile
+import time
 
-mydb=mysql.connector.connect(host='localhost',user='root',passwd='tiger',database='test')
+mydb=mysql.connector.connect(host='localhost',user='root',passwd='kingfisher',database='test')
 cursor=mydb.cursor()
 fn='candara'
 
@@ -732,21 +733,25 @@ def save():
                 c.writerow(i)
             messagebox.showinfo('Saved','File saved!')
             f.close()
+    
+def mini2():
+    main_window.state("iconic")
 
 def main():
     global main_window
     main_window=Toplevel(root)
-    main_window.geometry('480x320')
+    main_window.geometry('480x340')
     main_window.title('Medical Records Maintenance')
     main_window.configure(bg='#181818')
     llab=Label(main_window,text='Medical Records Maintenance',font=(fn,15),bg='#181818',fg='white').pack()
-    btn1=Button(main_window,text='ADD NEW RECORD',command=INSERT,bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
-    btn2=Button(main_window,text='DISPLAY RECORD',command=view,bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
-    btn3=Button(main_window,text='MODIFY RECORD',command=modify,bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
-    btn4=Button(main_window,text='DELETE RECORD',command=dlt,bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
-    save_b = Button(main_window,command=save,text="SAVE AS CSV",bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
+    btn1=Button(main_window,text='ADD NEW RECORD',command= lambda:[mini2(),INSERT()],bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
+    btn2=Button(main_window,text='DISPLAY RECORD',command=lambda:[mini2(),view()],bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
+    btn3=Button(main_window,text='MODIFY RECORD',command=lambda:[mini2(),modify()],bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
+    btn4=Button(main_window,text='DELETE RECORD',command=lambda:[mini2(),dlt()],bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
+    save_b = Button(main_window,command=lambda:[mini2(),save],text="SAVE AS CSV",bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
     btn5=Button(main_window,text='EXIT',height=2,width=2,command=lambda:[close1(),root.destroy()],bg='white').pack(pady=5,ipadx=25)
-
+        
+    
 def login():
     global ent1,ent2,admin
     admin=tk.Tk()
@@ -809,11 +814,3 @@ b2.pack(pady=4)
 lab3=Label(root,text='By \n Hanan Fathima Vattakkari \n Jibin C Basil \n Basil',font=(fn,10),bg='#181818',fg='white')
 lab3.pack(anchor='e')
 root.mainloop()
-
-
-
-
-
-
-
-            
