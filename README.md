@@ -3,7 +3,7 @@
 
   <h1> MEDICAL RECORD SYSYTEM MAINTAINANCE USING PYTHON AND TKINTER</h1>
 
-  <sub>Done by: <a>Hanan fathima vatttakari,Jibin.C.Basil, Basil</a><br>
+  <sub>Done by: <a>Hanan fathima vattakkari,Jibin.C.Basil, Basil</a><br>
 <small> January, 2022-23</small></sub>
 
 </div>
