@@ -96,6 +96,7 @@ def bmi_index(bmi):
 
 def close():
     new_window.destroy()
+    main_window.state('normal')
     
 def savedata():
     admn_number=ent1.get()
@@ -125,7 +126,7 @@ def savedata():
 
 def close1():
     main_window.destroy()
-
+    
 def INSERT():
     global new_window,ent1,ent2,ent3,ent6,ent7,ent12,ent14,c1,c2,c3,c4,c5,f,r
     new_window=Toplevel(main_window)
@@ -585,6 +586,7 @@ def modify():
             return g.get()
     def close2():
             modf.destroy()
+            main_window.state('normal')
     def bt0():
         try:
             btn9.destroy()
@@ -748,8 +750,8 @@ def main():
     btn2=Button(main_window,text='DISPLAY RECORD',command=lambda:[mini2(),view()],bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
     btn3=Button(main_window,text='MODIFY RECORD',command=lambda:[mini2(),modify()],bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
     btn4=Button(main_window,text='DELETE RECORD',command=lambda:[mini2(),dlt()],bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
-    save_b = Button(main_window,command=lambda:[mini2(),save],text="SAVE AS CSV",bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
-    btn5=Button(main_window,text='EXIT',height=2,width=2,command=lambda:[close1(),root.destroy()],bg='white').pack(pady=5,ipadx=25)
+    save_b = Button(main_window,command=lambda:[mini2(),save()],text="SAVE AS CSV",bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
+    btn5=Button(main_window,text='EXIT',height=2,width=2,command=lambda:[close(),root.destroy()],bg='white').pack(pady=5,ipadx=25)
         
     
 def login():
