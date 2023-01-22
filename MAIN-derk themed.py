@@ -5,9 +5,8 @@ import mysql.connector
 import datetime
 import csv
 from tkinter.filedialog import asksaveasfile
-import time
 
-mydb=mysql.connector.connect(host='localhost',user='root',passwd='kingfisher',database='test')
+mydb=mysql.connector.connect(host='localhost',user='root',passwd='tiger',database='test')
 cursor=mydb.cursor()
 fn='candara'
 
@@ -76,7 +75,6 @@ def BMI():
         a=int(ent6.get())/100
         b=a*a
         BMI=int(ent7.get())/float(b)
-        print('Your BMI is:',BMI)
         BMI=round(BMI,1)
         bmi_index(BMI)
     except:
@@ -96,6 +94,7 @@ def bmi_index(bmi):
 
 def close():
     new_window.destroy()
+    main_window.state('normal')
     
 def savedata():
     admn_number=ent1.get()
@@ -321,6 +320,7 @@ def dlt():
             
     def boom():
         dlte.destroy()
+        main_window.state('normal')
         
     btn=Button(dlte,text='EXIT',command=boom,bg='light grey').grid(row=13,column=2)
 
@@ -585,6 +585,7 @@ def modify():
             return g.get()
     def close2():
             modf.destroy()
+            main_window.state('normal')
     def bt0():
         try:
             btn9.destroy()
@@ -702,6 +703,7 @@ def view():
             
     def close2():
             view.destroy()
+            main_window.state('normal')
     def bt0():
         try:
             btn9.destroy()
@@ -733,6 +735,9 @@ def save():
                 c.writerow(i)
             messagebox.showinfo('Saved','File saved!')
             f.close()
+
+def close3():
+    main_window.destroy()
     
 def mini2():
     main_window.state("iconic")
@@ -749,8 +754,8 @@ def main():
     btn3=Button(main_window,text='MODIFY RECORD',command=lambda:[mini2(),modify()],bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
     btn4=Button(main_window,text='DELETE RECORD',command=lambda:[mini2(),dlt()],bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
     save_b = Button(main_window,command=lambda:[mini2(),save()],text="SAVE AS CSV",bg='white',height=2,width=4).pack(padx=10,pady=5,ipadx=60)
-    btn5=Button(main_window,text='EXIT',height=2,width=2,command=lambda:[close(),root.destroy()],bg='white').pack(pady=5,ipadx=25)
-        
+    btn5=Button(main_window,text='EXIT',height=2,width=2,command=lambda:[close3(),root.destroy()],bg='white').pack(pady=5,ipadx=25)
+
     
 def login():
     global ent1,ent2,admin

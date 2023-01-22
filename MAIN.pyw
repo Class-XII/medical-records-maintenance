@@ -7,7 +7,7 @@ import csv
 from tkinter.filedialog import asksaveasfile
 import time
 
-mydb=mysql.connector.connect(host='localhost',user='root',passwd='kingfisher',database='test')
+mydb=mysql.connector.connect(host='localhost',user='root',passwd='tiger',database='test')
 cursor=mydb.cursor()
 fn='candara'
 
@@ -76,7 +76,6 @@ def BMI():
         a=int(ent6.get())/100
         b=a*a
         BMI=int(ent7.get())/float(b)
-        print('Your BMI is:',BMI)
         BMI=round(BMI,1)
         bmi_index(BMI)
     except:
