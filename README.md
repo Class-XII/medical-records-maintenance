@@ -92,6 +92,6 @@ pip install MODULE-NAME
 
 ## You can also run the main code in idle also 
 
-# A Project Made By Students of 
+### A Project Made By Students of 
 - Class-XII 
 - KENDRIYA VIDYALAYA KALPETTA
