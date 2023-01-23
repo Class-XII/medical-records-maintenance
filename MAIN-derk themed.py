@@ -6,6 +6,7 @@ import datetime
 import csv
 from tkinter.filedialog import asksaveasfile
 
+
 mydb=mysql.connector.connect(host='localhost',user='root',passwd='tiger',database='test')
 cursor=mydb.cursor()
 fn='candara'
@@ -121,7 +122,6 @@ def savedata():
         messagebox.showinfo('Success','Record inserted')
     except:
         messagebox.showerror('duplicate error','Record already exists')
-
 def close1():
     main_window.destroy()
     
